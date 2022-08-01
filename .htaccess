@@ -1,0 +1,8 @@
+# nějaký komentář
+# zapneme modul pro přepisování url
+RewriteEngine On
+# pokud přijde požadavek na jakékoliv url, co neexistuje, 
+# tak místo změnit url na index.php?stranka=TOCOJEVURL
+
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule (.+)index.php?stranka=$1 [L,QSA]
